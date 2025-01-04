@@ -1,0 +1,13 @@
+{
+  "name": "local AI server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^3.0.0",
+    "ollama": "^0.5.11"
+  }
+}
