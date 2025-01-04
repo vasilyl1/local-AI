@@ -2,24 +2,24 @@ import 'isomorphic-fetch';
 import ollama from 'ollama';
 
 const chat = async () => {
-try {
-  const response = await ollama.chat({
-    model: 'llama3.2',
-    messages: [{ role: 'user', content: 'Why is the sky blue?' }],
-  });
-  console.log(response.message.content);
-}
-catch (error) {
-  console.log(error);
-};
+  try {
+    const response = await ollama.chat({
+      model: 'llama3.2',
+      messages: [{ role: 'user', content: 'Why is the sky blue?' }],
+    });
+    console.log(response.message.content);
+  }
+  catch (error) {
+    console.log(error);
+  };
 };
 
 const embed = async () => {
   try {
     const response = await ollama.embeddings({
       model: 'nomic-embed-text',
-      prompt: 
-      `The sky appears blue because of a phenomenon called scattering, which occurs when sunlight interacts with the tiny molecules of gases in the Earth's atmosphere.
+      prompt:
+        `The sky appears blue because of a phenomenon called scattering, which occurs when sunlight interacts with the tiny molecules of gases in the Earth's atmosphere.
 
 Here's what happens:
 
@@ -37,11 +37,13 @@ It's worth noting that the color of the sky can change under different condition
 Overall, the blue color of the sky is a result of the scattering of sunlight by the tiny molecules in our atmosphere.`
       ,
     });
-    console.log(response.embedding);
+
+    console.log(JSON.stringify(response.embedding));
+
   }
   catch (error) {
     console.log(error);
   };
-  };
+};
 
 embed();
