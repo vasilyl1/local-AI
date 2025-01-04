@@ -34,3 +34,6 @@ yarn.lock
 
 # Optional files to ignore
 *.tgz
+
+content.js
+output.txt
